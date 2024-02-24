@@ -16,7 +16,7 @@ createApp({
             axios.post(`${this.apiUrl}/api/user/check`)
             .then((res)=>{
                 this.getData();
-            })
+            }) 
             .catch((error) =>{
                 console.dir(error);
             })
@@ -40,7 +40,7 @@ createApp({
     mounted(){
         const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
         axios.defaults.headers.common.Authorization = token;
-        this.checkIdentity()
+        this.checkIdentity();
     }   
 }).mount('#app');
 
