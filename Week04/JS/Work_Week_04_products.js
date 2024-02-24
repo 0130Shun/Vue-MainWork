@@ -40,7 +40,6 @@ createApp({
                 .then((res) => {
                     this.products = res.data.products;
                     this.pages = res.data.pagination;
-                    console.log(res);
                 })
                 .catch((error) => {
                     console.dir(error);
@@ -52,17 +51,16 @@ createApp({
                     imagesUrl: [],
                 };
                 this.isNew = true;
-                this.$refs.pModal.openModal();
+                this.$refs.productModal.openModal();
             } else if (status === 'edit') {
                 this.tempProduct = { ...item };
                 if (!Array.isArray(this.tempProduct.imagesUrl)) {
                     this.tempProduct.imagesUrl = [];
                 }
                 this.isNew = false;
-                this.$refs.pModal.openModal();
+                this.$refs.productModal.openModal();
             } else if (status === 'delete') {
-                this.tempProduct = { ...item };
-                this.$refs.dModal.openModal();
+                this.$refs.delModal.openModal();
             }
         },
         //新增資料
@@ -80,7 +78,7 @@ createApp({
                     //重新更新列表
                     this.getData();
                     //關閉彈掉視窗
-                    this.$refs.pModal.closeModal();
+                    this.$refs.productModal.closeModal();
                     //新增完資料後清除
                     this.tempProduct = {};
                 })
@@ -96,7 +94,7 @@ createApp({
                     //重新更新列表
                     this.getData();
                     //關閉彈掉視窗
-                    this.$refs.dModal.closeModel();
+                    this.$refs.delModal.closeModel();
                 })
                 .catch((error) => {
                     console.dir(error);
