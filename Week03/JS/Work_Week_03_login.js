@@ -17,7 +17,7 @@ createApp({
             axios.post(apiUrl,this.user)
             .then((res)=>{
                 // 寫入token
-                const { token,expired} = res.data;
+                const { token,expired } = res.data;
                 // 把token和expired存入cookie
                 document.cookie = `hexToken=${token};expired=${new Date(expired)}`;
                 // 頁面跳轉
