@@ -28,10 +28,14 @@ createApp({
         checkAdmin() {
             axios.post(`${apiUrl}/api/user/check`)
                 .then((res) => {
+                if(res.data.success){
                     this.getData();
+                }
+                    
                 })
                 .catch((error) => {
                     console.dir(error);
+                    window.location = 'Work_Week_04_login.html';
                 })
         },
         //取得資料
@@ -109,7 +113,6 @@ createApp({
         axios.defaults.headers.common['Authorization'] = token;
         //執行checkAdmin方法
         this.checkAdmin();
-        //new...>建立實體
     },
     components: {
         pagination,
