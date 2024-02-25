@@ -15,7 +15,7 @@ createApp({
             tempProduct: {
                 imageUrl: []
             },
-            pages:{},
+            pages: {},
             modalProduct: null,
             modalDel: null,
             //判斷
@@ -28,10 +28,9 @@ createApp({
         checkAdmin() {
             axios.post(`${apiUrl}/api/user/check`)
                 .then((res) => {
-                if(res.data.success){
-                    this.getData();
-                }
-                    
+                    if (res.data.success) {
+                        this.getData();
+                    }
                 })
                 .catch((error) => {
                     console.dir(error);
@@ -64,6 +63,7 @@ createApp({
                 this.isNew = false;
                 this.$refs.productModal.openModal();
             } else if (status === 'delete') {
+                this.tempProduct = { ...item };
                 this.$refs.delModal.openModal();
             }
         },
