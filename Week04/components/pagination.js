@@ -6,7 +6,7 @@ export default {
             disabled:!pages.has_pre
         }">
             <a class="page-link" href="#" aria-label="Previous"
-            @click="getData(pages.current_page-1)">
+            @click="getData(pages.current_page-1)" prevent>
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
@@ -19,7 +19,7 @@ export default {
             disabled:!pages.has_next
         }">
             <a class="page-link" href="#" aria-label="Next"
-            @click="getData(pages.current_page+2)">
+            @click="getData(pages.current_page+2)" prevent>
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>
