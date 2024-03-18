@@ -1,8 +1,8 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
-import pagination from './pagination.js';
-import ProductModal from './ProductModal.js';
-import ProductModalDel from './ProductModalDel.js';
+import pagination from './components/pagination.js';
+import ProductModal from './components/ProductModal.js';
+import ProductModalDel from './components/ProductModalDel.js';
 
 const apiUrl = 'https://vue3-course-api.hexschool.io/v2';
 const apiPath = '_shun0130';
